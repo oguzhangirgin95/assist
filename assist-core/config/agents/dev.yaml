@@ -1,0 +1,17 @@
+name: dev
+description: Activates the assist Dev agent persona.
+system_prompt: dev.md
+tools:
+  - changes
+  - edit
+  - fetch
+  - githubRepo
+  - problems
+  - runCommands
+  - runTasks
+  - runTests
+  - search
+  - runSubagent
+  - testFailure
+  - todos
+  - usages

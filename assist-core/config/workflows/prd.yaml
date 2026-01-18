@@ -1,0 +1,13 @@
+name: prd
+description: Create/validate/edit PRD
+instructions: prd.md
+template: "# PRD\r\n\r\n## Summary\r\n\r\n## Problem\r\n\r\n## Users\r\n\r\n## Goals\r\n\r\n## Non-Goals\r\n\r\n## Requirements\r\n\r\n## Acceptance Criteria\r\n\r\n## Risks & Assumptions\r\n\r\n## Dependencies\r\n\r\n## Rollout / Release\r\n"
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+document_output_language: '{config_source}:document_output_language'
+date: system-generated
+checklist: '{installed_path}/checklist.md'
+default_output_file: '{planning_artifacts}/prd.md'
+standalone: true

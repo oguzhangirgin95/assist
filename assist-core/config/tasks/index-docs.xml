@@ -1,0 +1,24 @@
+<task id="_assist/core/tasks/index-docs" name="Index Docs" description="Generates or updates an index.md of all documents in the specified directory" standalone="true">
+  <llm critical="true">
+    <i>MANDATORY: Execute ALL steps in the flow section IN EXACT ORDER</i>
+    <i>Read file contents to generate accurate descriptions</i>
+  </llm>
+
+  <flow>
+    <step n="1" title="Scan Directory">
+      <i>List all files and subdirectories in the target location</i>
+    </step>
+
+    <step n="2" title="Group Content">
+      <i>Organize files by type/purpose/subdirectory</i>
+    </step>
+
+    <step n="3" title="Generate Descriptions">
+      <i>Read each file and create concise (3-10 word) descriptions</i>
+    </step>
+
+    <step n="4" title="Create/Update Index">
+      <i>Write or update index.md with organized file listings</i>
+    </step>
+  </flow>
+</task>

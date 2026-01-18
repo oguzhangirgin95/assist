@@ -1,0 +1,15 @@
+name: dev-story
+description: Implement story
+instructions: dev-story.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+implementation_artifacts: '{config_source}:implementation_artifacts'
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+checklist: '{installed_path}/checklist.md'
+story_dir: '{implementation_artifacts}/stories'
+sprint_status: '{implementation_artifacts}/sprint-status.yaml'
+project_context: '{planning_artifacts}/project-context.md'
+standalone: true

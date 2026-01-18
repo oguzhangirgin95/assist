@@ -1,0 +1,10 @@
+name: sprint-status
+description: Summarize sprint-status.yaml
+instructions: sprint-status.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+implementation_artifacts: '{config_source}:implementation_artifacts'
+communication_language: '{config_source}:communication_language'
+sprint_status: '{implementation_artifacts}/sprint-status.yaml'
+standalone: true

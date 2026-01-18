@@ -1,0 +1,11 @@
+name: create-epics-and-stories
+description: Create epics and stories
+instructions: create-epics-and-stories.md
+template: "# Epics and Stories\r\n\r\n## Epic 1\r\n### Story 1.1\r\n- Summary:\r\n- Acceptance Criteria:\r\n- Notes for Dev:\r\n- Notes for Test:\r\n\r\n## Epic 2\r\n"
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+default_output_file: '{planning_artifacts}/epics-and-stories.md'
+standalone: true

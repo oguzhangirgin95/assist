@@ -1,0 +1,11 @@
+name: sprint-planning
+description: Generate sprint-status tracking
+instructions: sprint-planning.md
+template: '{installed_path}/sprint-status-template.yaml'
+author: assist
+config_source: assist/config_source.json
+implementation_artifacts: '{config_source}:implementation_artifacts'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+sprint_status: '{implementation_artifacts}/sprint-status.yaml'
+standalone: true

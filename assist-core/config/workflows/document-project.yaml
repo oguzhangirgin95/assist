@@ -1,0 +1,13 @@
+name: document-project
+description: Document brownfield project
+instructions: document-project.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+project_knowledge: '{config_source}:project_knowledge'
+communication_language: '{config_source}:communication_language'
+document_output_language: '{config_source}:document_output_language'
+date: system-generated
+checklist: '{installed_path}/checklist.md'
+output_folder: '{project_knowledge}/project-documentation'
+standalone: true

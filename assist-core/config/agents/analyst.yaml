@@ -1,0 +1,17 @@
+name: analyst
+description: Activates the assist Analyst agent persona.
+system_prompt: analyst.md
+tools:
+  - changes
+  - edit
+  - fetch
+  - githubRepo
+  - problems
+  - runCommands
+  - runTasks
+  - runTests
+  - search
+  - runSubagent
+  - testFailure
+  - todos
+  - usages

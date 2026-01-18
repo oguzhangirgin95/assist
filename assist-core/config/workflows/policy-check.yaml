@@ -1,0 +1,11 @@
+name: policy-check
+description: Run policy/security/privacy checks
+instructions: policy-check.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+output_folder: '{config_source}:output_folder'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+checklist: '{installed_path}/checklist.md'
+standalone: true

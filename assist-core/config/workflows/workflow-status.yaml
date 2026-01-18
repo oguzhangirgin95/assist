@@ -1,0 +1,12 @@
+name: workflow-status
+description: Answer 'what should I do now?' based on status file
+instructions: workflow-status.md
+template: '{installed_path}/workflow-status-template.yaml'
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+user_name: '{config_source}:user_name'
+date: system-generated
+status_file: '{planning_artifacts}/assist-workflow-status.yaml'
+standalone: true

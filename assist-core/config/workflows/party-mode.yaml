@@ -1,0 +1,11 @@
+name: party-mode
+description: Orchestrate multi-agent discussion
+instructions: party-mode.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+output_folder: '{config_source}:output_folder'
+communication_language: '{config_source}:communication_language'
+user_name: '{config_source}:user_name'
+date: system-generated
+standalone: true

@@ -1,0 +1,11 @@
+name: artifact-lint
+description: Lint generated artifacts
+instructions: artifact-lint.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+output_folder: '{config_source}:output_folder'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+artifact_root: '{output_folder}'
+standalone: true

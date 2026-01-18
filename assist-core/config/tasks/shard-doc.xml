@@ -1,0 +1,27 @@
+<task id="_assist/core/tasks/shard-doc" name="Shard Document" description="Splits large markdown documents into smaller files" standalone="true">
+  <objective>Split large markdown documents into smaller files based on level-2 headings</objective>
+
+  <flow>
+    <step n="1" title="Get Source Document">
+      <action>Ask user for the source document path</action>
+      <action>Verify file exists and is markdown (.md)</action>
+      <action if="file not found or not markdown">HALT with error</action>
+    </step>
+
+    <step n="2" title="Get Destination Folder">
+      <action>Default: same directory, folder named after source without .md</action>
+      <action>Ask user to confirm default or provide custom</action>
+      <action>Verify destination is writable</action>
+    </step>
+
+    <step n="3" title="Execute Sharding">
+      <action>Execute: npx @kayvan/markdown-tree-parser explode [source] [dest]</action>
+      <action if="command fails">HALT and show error</action>
+    </step>
+
+    <step n="4" title="Verify Output">
+      <action>Verify shards + index.md exist</action>
+      <action if="no shards">HALT</action>
+    </step>
+  </flow>
+</task>

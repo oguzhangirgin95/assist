@@ -1,0 +1,10 @@
+name: code-review
+description: Adversarial code review
+instructions: code-review.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+communication_language: '{config_source}:communication_language'
+date: system-generated
+checklist: '{installed_path}/checklist.md'
+standalone: true

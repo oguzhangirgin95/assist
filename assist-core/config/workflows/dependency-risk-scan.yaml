@@ -1,0 +1,9 @@
+name: dependency-risk-scan
+description: Assess dependency risks
+instructions: dependency-risk-scan.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+communication_language: '{config_source}:communication_language'
+date: system-generated
+standalone: true

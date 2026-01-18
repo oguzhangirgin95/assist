@@ -1,0 +1,10 @@
+name: correct-course
+description: Handle scope/requirement changes
+instructions: correct-course.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+standalone: true

@@ -1,0 +1,28 @@
+<task id="_assist/core/tasks/lint-artifacts.xml" name="Lint Artifacts" standalone="true">
+  <objective>Validate generated artifacts against minimal required rules and structure</objective>
+
+  <inputs>
+    <input name="artifact_root" desc="Root folder of artifacts (default: assist/output)" />
+  </inputs>
+
+  <flow>
+    <step n="1" title="Locate Artifacts">
+      <action>Resolve artifact_root; default to {project-root}/assist/output</action>
+      <action>Check planning-artifacts and implementation-artifacts exist</action>
+    </step>
+
+    <step n="2" title="Required Files">
+      <action>Verify project-context.md exists under planning-artifacts or docs</action>
+      <action>Verify at least one of: PRD, architecture, stories exists when relevant</action>
+    </step>
+
+    <step n="3" title="Format Checks">
+      <action>Check markdown files have top-level title and consistent headings</action>
+      <action>Check yaml files are valid and parseable</action>
+    </step>
+
+    <step n="4" title="Report">
+      <action>Output a concise report: PASS/CONCERNS/FAIL with reasons</action>
+    </step>
+  </flow>
+</task>

@@ -1,0 +1,17 @@
+name: product-owner
+description: Activates the assist Product Owner agent persona.
+system_prompt: product-owner.md
+tools:
+  - changes
+  - edit
+  - fetch
+  - githubRepo
+  - problems
+  - runCommands
+  - runTasks
+  - runTests
+  - search
+  - runSubagent
+  - testFailure
+  - todos
+  - usages

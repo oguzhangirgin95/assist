@@ -1,0 +1,12 @@
+name: create-story
+description: Create next story
+instructions: create-story.md
+template: "# Story {{story_id}}\r\n\r\n## Summary\r\n\r\n## Acceptance Criteria\r\n\r\n## Tasks\r\n- [ ] Task 1\r\n  - [ ] Subtask 1\r\n\r\n## Test Notes\r\n\r\n## Definition of Done\r\n- Tests passing\r\n- Lint clean\r\n- AC satisfied\r\n"
+author: assist
+config_source: assist/config_source.json
+implementation_artifacts: '{config_source}:implementation_artifacts'
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+story_dir: '{implementation_artifacts}/stories'
+standalone: true

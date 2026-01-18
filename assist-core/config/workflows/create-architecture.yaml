@@ -1,0 +1,13 @@
+name: create-architecture
+description: Create architecture decisions
+instructions: create-architecture.md
+template: "# Architecture\r\n\r\n## Context\r\n\r\n## Goals / Non-Goals\r\n\r\n## High-Level Design\r\n\r\n## Components\r\n\r\n## Data\r\n\r\n## NFRs\r\n\r\n## Decisions & Trade-offs\r\n\r\n## Risks\r\n"
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+document_output_language: '{config_source}:document_output_language'
+date: system-generated
+checklist: '{installed_path}/checklist.md'
+default_output_file: '{planning_artifacts}/architecture.md'
+standalone: true

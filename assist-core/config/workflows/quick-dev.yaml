@@ -1,0 +1,10 @@
+name: quick-dev
+description: Flexible development
+instructions: quick-dev.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+implementation_artifacts: '{config_source}:implementation_artifacts'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+standalone: true

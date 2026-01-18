@@ -1,0 +1,12 @@
+name: check-implementation-readiness
+description: Validate PRD/Architecture/Stories readiness
+instructions: check-implementation-readiness.md
+template: ''
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+date: system-generated
+checklist: '{installed_path}/checklist.md'
+default_output_file: '{planning_artifacts}/readiness-report-{{date}}.md'
+standalone: true

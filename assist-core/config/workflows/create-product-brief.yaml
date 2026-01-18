@@ -1,0 +1,13 @@
+name: create-product-brief
+description: Create product brief
+instructions: create-product-brief.md
+template: "# Product Brief — {{date}}\r\n\r\n## Problem\r\n\r\n## Target Users\r\n\r\n## Jobs To Be Done\r\n\r\n## Proposed Solution (High Level)\r\n\r\n## Non-Goals / Out of Scope\r\n\r\n## Assumptions & Risks\r\n\r\n## Success Metrics\r\n\r\n## Next Steps\r\n"
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+document_output_language: '{config_source}:document_output_language'
+user_name: '{config_source}:user_name'
+date: system-generated
+default_output_file: '{planning_artifacts}/product-brief-{{date}}.md'
+standalone: true

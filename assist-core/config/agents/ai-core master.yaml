@@ -1,0 +1,3 @@
+name: assist master
+description: Master Router, Workflow Orchestrator, and Policy Enforcer
+system_prompt: ai-core master.md

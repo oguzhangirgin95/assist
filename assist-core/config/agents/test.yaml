@@ -1,0 +1,17 @@
+name: test
+description: Activates the assist Test agent persona.
+system_prompt: test.md
+tools:
+  - changes
+  - edit
+  - fetch
+  - githubRepo
+  - problems
+  - runCommands
+  - runTasks
+  - runTests
+  - search
+  - runSubagent
+  - testFailure
+  - todos
+  - usages

@@ -1,0 +1,12 @@
+name: research
+description: Conduct research (market/technical/domain)
+instructions: research.md
+template: "# Research Report — {{date}}\r\n\r\n## Scope\r\n\r\n## Key Questions\r\n\r\n## Findings\r\n\r\n## Evidence / Sources\r\n\r\n## Risks & Unknowns\r\n\r\n## Recommendations\r\n"
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+document_output_language: '{config_source}:document_output_language'
+date: system-generated
+default_output_file: '{planning_artifacts}/research-{{date}}.md'
+standalone: true

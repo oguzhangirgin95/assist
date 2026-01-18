@@ -1,0 +1,12 @@
+name: generate-project-context
+description: Generate project-context.md
+instructions: generate-project-context.md
+template: "# Project Context\r\n\r\n## Languages\r\n- communication_language: {{communication_language}}\r\n- document_output_language: {{document_output_language}}\r\n\r\n## Repo Conventions\r\n\r\n## Testing\r\n\r\n## Architecture Rules\r\n\r\n## Do / Don't\r\n"
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+document_output_language: '{config_source}:document_output_language'
+date: system-generated
+output_file: '{planning_artifacts}/project-context.md'
+standalone: true

@@ -1,0 +1,28 @@
+<task id="_assist/core/tasks/review-adversarial.xml" name="Adversarial Review">
+  <objective>Skeptically review content and produce actionable findings</objective>
+
+  <inputs>
+    <input name="content" desc="Content to review" />
+  </inputs>
+
+  <llm critical="true">
+    <i>Be skeptical and focus on what is missing</i>
+    <i>Use a precise, professional tone</i>
+    <i>Find at least ten issues or improvements when possible</i>
+  </llm>
+
+  <flow>
+    <step n="1" title="Receive Content">
+      <action>Load content; identify type (diff/doc/story/spec)</action>
+      <action>If empty, ask for clarification and abort</action>
+    </step>
+
+    <step n="2" title="Adversarial Analysis">
+      <action>List concrete issues: correctness, security, performance, maintainability, missing tests</action>
+    </step>
+
+    <step n="3" title="Present Findings">
+      <action>Output findings as a Markdown list</action>
+    </step>
+  </flow>
+</task>

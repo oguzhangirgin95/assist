@@ -1,0 +1,13 @@
+name: create-ux-design
+description: Create UX design plan
+instructions: create-ux-design.md
+template: "# UX Design\r\n\r\n## User Journeys\r\n\r\n## Screens / Views\r\n\r\n## Components\r\n\r\n## States (loading/empty/error)\r\n\r\n## Accessibility\r\n\r\n## Notes for Dev/Test\r\n"
+author: assist
+config_source: assist/config_source.json
+planning_artifacts: '{config_source}:planning_artifacts'
+communication_language: '{config_source}:communication_language'
+document_output_language: '{config_source}:document_output_language'
+date: system-generated
+checklist: '{installed_path}/checklist.md'
+default_output_file: '{planning_artifacts}/ux-design.md'
+standalone: true

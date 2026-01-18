@@ -1,0 +1,75 @@
+<task id="_assist/core/tasks/workflow.xml" name="Execute Workflow">
+  <objective>Execute given workflow by loading its configuration, following instructions, and producing output</objective>
+
+  <llm critical="true">
+    <mandate>Always read COMPLETE files for workflow-related inputs</mandate>
+    <mandate>Instructions are MANDATORY - either as file path, steps or embedded list in YAML/XML/Markdown</mandate>
+    <mandate>Execute ALL steps in instructions IN EXACT ORDER</mandate>
+    <mandate>Save to output file after EVERY template-output checkpoint</mandate>
+    <mandate>NEVER skip a step - you are responsible for complete execution</mandate>
+  </llm>
+
+  <WORKFLOW-RULES critical="true">
+    <rule n="1">Steps execute in exact numerical order</rule>
+    <rule n="2">Optional steps: Ask user unless #yolo mode active</rule>
+    <rule n="3">Template-output checkpoints: save content, summarize, and wait for user continue (unless YOLO)</rule>
+  </WORKFLOW-RULES>
+
+  <flow>
+    <step n="1" title="Load and Initialize Workflow">
+      <substep n="1a" title="Load Configuration and Resolve Variables">
+        <action>Read workflow.yaml from provided path</action>
+        <mandate>Load config_source (REQUIRED)</mandate>
+        <phase n="1">Load external config from config_source path</phase>
+        <phase n="2">Resolve {config_source}: references with values from config</phase>
+        <phase n="3">Resolve system variables (date:system-generated) and paths ({project-root}, {installed_path})</phase>
+        <phase n="4">Ask user for input of any variables still unknown</phase>
+      </substep>
+
+      <substep n="1b" title="Load Required Components">
+        <mandate>Instructions: Read COMPLETE file from path OR embedded list (REQUIRED)</mandate>
+        <check>If template path → Read COMPLETE template file</check>
+        <check>If validation path → Note path for later loading when needed</check>
+        <note>Data files (csv/json) → Store paths only, load on-demand when instructions reference them</note>
+      </substep>
+
+      <substep n="1c" title="Initialize Output" if="template-workflow">
+        <action>Resolve default_output_file path with variables and {{date}}</action>
+        <action>Create output directory if it doesn't exist</action>
+        <action>If template-workflow → write template to output file</action>
+      </substep>
+    </step>
+
+    <step n="2" title="Process Each Instruction Step in Order">
+      <iterate>For each step in instructions:</iterate>
+
+      <substep n="2a" title="Handle Step Attributes">
+        <check>If optional="true" and NOT #yolo → Ask user to include</check>
+        <check>If if="condition" → Evaluate condition</check>
+        <check>If for-each="item" → Repeat step for each item</check>
+        <check>If repeat="n" → Repeat step n times</check>
+      </substep>
+
+      <substep n="2b" title="Execute Step Content">
+        <action>Process step instructions (markdown or XML tags)</action>
+        <action>Replace {{variables}} with resolved values</action>
+      </substep>
+
+      <substep n="2c" title="Handle template-output Checkpoints">
+        <if tag="template-output">
+          <mandate>Generate content for this section</mandate>
+          <mandate>Save to file (write first time, edit subsequent)</mandate>
+          <ask>[c] Continue, [y] YOLO rest. WAIT for response.</ask>
+        </if>
+      </substep>
+
+      <substep n="2d" title="Step Completion">
+        <ask>Continue to next step? (y/n/edit)</ask>
+      </substep>
+    </step>
+
+    <step n="3" title="Completion">
+      <action>Report workflow completion and output path(s)</action>
+    </step>
+  </flow>
+</task>
